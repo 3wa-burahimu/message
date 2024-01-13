@@ -8,7 +8,7 @@ on:
 
 env:
     fail-fast: true
-    PHPUNIT_FLAGS: "-v --coverage-html coverage --coverage-clover coverage/clover.xml"
+    PHPUNIT_FLAGS: "--coverage-html coverage --coverage-clover coverage/clover.xml"
 
 jobs:
     test:
