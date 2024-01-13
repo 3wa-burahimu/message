@@ -4,12 +4,13 @@ namespace App\Tests;
 
 // Framework de tests PHPUNIT
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes;
 
 use App\Message;
 
+#[Attributes\CoversClass(Message::class)]
 class MessageTest extends TestCase
 {
-
     protected Message $message;
 
     public function setUp():void
@@ -22,9 +23,7 @@ class MessageTest extends TestCase
         $this->assertSame("Hello World!", $this->message->get());
     }
 
-    /**
-     * @test 
-     */
+    #[Attributes\Test()]
     public function langfr()
     {
         $this->message->setLang('fr');
