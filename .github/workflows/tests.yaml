@@ -42,7 +42,7 @@ jobs:
               run: composer install --ansi --no-interaction --no-progress
 
             - name: "Run tests"
-              run: vendor/bin/phpunit ${{ env.PHPUNIT_FLAGS }}
+              run: XDEBUG_MODE=coverage vendor/bin/phpunit ${{ env.PHPUNIT_FLAGS }}
             
             - name: "Check coverage"
               run: php coverage-checker.php coverage/clover.xml 80
